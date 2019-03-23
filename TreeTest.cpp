@@ -17,7 +17,13 @@ int main() {
   threetree.insert(7);
   threetree.insert(3);
   
-  ariel::Tree mytree;  
+  ariel::Tree mytree;
+  mytree.insert(10); 
+  mytree.insert(5); 
+  mytree.insert(14); 
+  mytree.insert(1); 
+  mytree.insert(7); 
+  mytree.insert(16);  
 
   badkan::TestCase tc("Binary tree");
   tc
@@ -39,7 +45,44 @@ int main() {
   .CHECK_THROWS(threetree.insert(3))
   .CHECK_THROWS(threetree.left(6))
   .CHECK_OK    (threetree.print())
+  .print()
+
+  .CHECK_EQUAL (mytree.size(), 6)
+  .CHECK_EQUAL (mytree.root(), 10)
+  .CHECK_EQUAL (mytree.parent(1), 5)
+  .CHECK_EQUAL (mytree.parent(7), 5)
+  .CHECK_EQUAL (mytree.left(10), 5)
+  .CHECK_EQUAL (mytree.right(10), 14)
+  .CHECK_THROWS(mytree.insert(5))
+  .CHECK_EQUAL (mytree.contains(7), true)
+  .CHECK_OK    (mytree.remove(7))
+  .CHECK_EQUAL (mytree.contains(7), false)
+  .CHECK_EQUAL (mytree.size(), 5)
+  .CHECK_THROWS(mytree.left(8))
+  .CHECK_OK    (mytree.insert(7))
+  .CHECK_THROWS    (mytree.insert(16))
+  .CHECK_OK    (mytree.insert(15))
+  .CHECK_OK    (mytree.insert(20))
+  .CHECK_EQUAL (mytree.size(), 8)
+  .CHECK_EQUAL (mytree.right(10), 14)
+  .CHECK_OK    (mytree.remove(14))
+  .CHECK_EQUAL (mytree.size(), 7)
+  .CHECK_EQUAL (mytree.right(10), 16)
+  .CHECK_OK    (mytree.remove(16))
+  .CHECK_EQUAL (mytree.right(10), 15)
+  .CHECK_EQUAL (mytree.right(15), 20)
+  .CHECK_EQUAL (mytree.root(), 10)
+  .CHECK_EQUAL (mytree.size(), 6)
+  .CHECK_EQUAL (mytree.contains(10), true)
+  .CHECK_OK    (mytree.remove(10))
+  .CHECK_EQUAL (mytree.contains(10), false)
+  .CHECK_EQUAL (mytree.size(), 5)
+  .CHECK_EQUAL (mytree.root(), 7)
+  .CHECK_EQUAL (mytree.right(7), 15)
+  .CHECK_EQUAL (mytree.left(7), 5)
+  .CHECK_OK    (mytree.print())
   .print();
+ 
   
   cout << "You have " << tc.right() << " right answers and " << tc.wrong() << " wrong answers so your grade is " << tc.grade() << ". Great!" << endl;
 }

@@ -1,65 +1,62 @@
+
 #include <iostream>
 #include <cstdio>
+#include "Tree.hpp"
 using namespace std;
+using namespace ariel;
 
-class Tree {
-
-struct Node {
-  int data;
-  struct Node *right, *left, *parent;	
-};
-
-private:
-int size;
-Node *rootNode;
-public:
 
 
 //inserts i to the tree in thr right place, returns true if succeeded
-bool insert(int i)
+bool Tree::insert(int i)
 {
 	return false;
-} 
+}
+
+
 //removes i from the tree, will return true when succeeded.
-bool remove(int i)
+bool Tree::remove(int i)
 {
-	return false;
+	
+	return true;
 }
 //returns the amount of numbers in the tree
-int getsize()
+int Tree::size()
 {
-  return size;
+  return 0;
 }
 	//returns true if i is in the tree
-bool contains(int i){
+bool Tree::contains(int i){
+
 	return true;
-	}
+}
 	//returns the number that's in the root of the tree
-	int root()
-	{
+int Tree::root()
+{
 	return 0;
-	}
+}
 	//returns the value of the left child
-	int left(int i)
-	{
+int Tree::left(int i)
+{
 	return 0;
-	} 
+} 
 	//returns the valute of the right child
-	int right(int i)
-	{
+int Tree::right(int i)
+{
 
 	return 0;
-	}
+}
 
-	int parent (int i)
-	{
+int Tree::parent (int i)
+{
 	 return 0;
-	}
+}
  	//prints the structure of the tree
-	void print()
-	{
+void Tree::print()
+{
 
-	}
+}
 
-};
+
+
 
