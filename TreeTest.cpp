@@ -182,26 +182,26 @@ int main() {
   .CHECK_OK    (bigtree.remove(51))
   .CHECK_THROWS  (bigtree.root())
   .CHECK_EQUAL  (bigtree.size(),0)
-  .CHECK_OK (bigtree.insert(20));
-  .CHECK_OK (bigtree.insert(15));
-   .CHECK_OK (bigtree.insert(14));
-   .CHECK_OK (bigtree.insert(16));
-   .CHECK_OK (bigtree.insert(34));
-   .CHECK_OK (bigtree.insert(40));
-   .CHECK_OK (bigtree.insert(32));
-   .CHECK_OK (bigtree.insert(49));
-   .CHECK_OK (bigtree.insert(50));
-   .CHECK_OK (bigtree.insert(51));
-   .CHECK_OK (bigtree.insert(52));
-   .CHECK_OK (bigtree.insert(1));
-   .CHECK_OK (bigtree.insert(3));
-   .CHECK_OK (bigtree.insert(12));
-   .CHECK_OK (bigtree.insert(17));
-   .CHECK_OK (bigtree.insert(33));
-   .CHECK_OK (bigtree.insert(38));
-   .CHECK_OK (bigtree.insert(37));
-   .CHECK_OK (bigtree.insert(25));
-   .CHECK_OK (bigtree.insert(18));
+  .CHECK_OK (bigtree.insert(20))
+  .CHECK_OK (bigtree.insert(15))
+   .CHECK_OK (bigtree.insert(14))
+   .CHECK_OK (bigtree.insert(16))
+   .CHECK_OK (bigtree.insert(34))
+   .CHECK_OK (bigtree.insert(40))
+   .CHECK_OK (bigtree.insert(32))
+   .CHECK_OK (bigtree.insert(49))
+   .CHECK_OK (bigtree.insert(50))
+   .CHECK_OK (bigtree.insert(51))
+   .CHECK_OK (bigtree.insert(52))
+   .CHECK_OK (bigtree.insert(1))
+   .CHECK_OK (bigtree.insert(3))
+   .CHECK_OK (bigtree.insert(12))
+   .CHECK_OK (bigtree.insert(17))
+   .CHECK_OK (bigtree.insert(33))
+   .CHECK_OK (bigtree.insert(38))
+   .CHECK_OK (bigtree.insert(37))
+   .CHECK_OK (bigtree.insert(25))
+   .CHECK_OK (bigtree.insert(18))
    .print();
   
   cout << "You have " << tc.right() << " right answers and " << tc.wrong() << " wrong answers so your grade is " << tc.grade() << ". Great!" << endl;
