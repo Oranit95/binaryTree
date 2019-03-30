@@ -12,6 +12,21 @@ Tree::Tree()
     Troot = NULL;
     Tsize = 0;
 }
+//destructor
+Tree::~Tree() { 
+  deleteTree(Troot);
+}
+
+//deleting all the nodes;
+void Tree::deleteTree(node* Troot){
+
+  if(Troot == NULL)return;
+  deleteTree(Troot->right);
+  deleteTree(Troot->left);
+  delete Troot;
+  Troot=NULL;
+  Tsize=0;
+}
 
 //inserts i to the tree in thr right place, returns true if succeeded
 void Tree::insert(int i){
