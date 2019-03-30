@@ -220,6 +220,7 @@ node* Tree::DeleteNodeInBST(node* Troot,int i)
             node* temp = Troot->left;
             delete(Troot);
             Troot = NULL; 
+	    if(temp != NULL) temp->parent = Troot->parent;
 	    return(temp);
         }
         else if(Troot->left == NULL)
@@ -227,6 +228,7 @@ node* Tree::DeleteNodeInBST(node* Troot,int i)
             node* temp = Troot->right;
             delete(Troot);
             Troot = NULL; 
+            if(temp != NULL) temp->parent = Troot->parent;
 	    return(temp);
         }
         //two child
