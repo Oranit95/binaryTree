@@ -106,7 +106,7 @@ bool Tree::contains(int i){
 	//returns the number that's in the root of the tree
 int Tree::root()
 {
-	if(Troot==NULL)  throw std::invalid_argument( "NULL POINTER EXCEPTION" );
+if(Troot==NULL)  throw std::invalid_argument( "NULL POINTER EXCEPTION" );
 	return Troot->data;
 }
 
@@ -185,7 +185,8 @@ node* Tree::FindMax(node* Troot)
 
 node* Tree::DeleteNodeInBST(node* Troot,int i)
 {
-    if(Troot==NULL) return Troot;
+
+    if(Troot==NULL) return NULL;
     if(i<Troot->data && Troot->left!=NULL) 
         Troot->left = DeleteNodeInBST(Troot->left, i);
     else if (i > Troot->data && Troot->right!=NULL)
@@ -227,11 +228,14 @@ node* Tree::DeleteNodeInBST(node* Troot,int i)
 void Tree::remove(int i)
 {
 
+
 node *temp1 = search2(i, Troot);
 if (temp1 == NULL ||contains(i) == false) throw std::invalid_argument ("This node doesnt exist in the tree");
 node *temp2 = DeleteNodeInBST(Troot, i);
 if (temp1 == Troot) Troot = temp2;
 if (temp2 == NULL) Troot = NULL;
+
+
 
 Tsize--;
 
