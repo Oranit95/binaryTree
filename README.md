@@ -1,4 +1,4 @@
 # binaryTree
-bynary tree in c++
+binary tree in c++
 
 students: Karin Aharon, Oranit Cohen
