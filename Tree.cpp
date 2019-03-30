@@ -218,17 +218,17 @@ node* Tree::DeleteNodeInBST(node* Troot,int i)
         else if(Troot->right == NULL)
         {
             node* temp = Troot->left;
+            if(temp != NULL) temp->parent = Troot->parent;
             delete(Troot);
             Troot = NULL; 
-	    if(temp != NULL) temp->parent = Troot->parent;
 	    return(temp);
         }
         else if(Troot->left == NULL)
         {
-            node* temp = Troot->right;
+            node* temp = Troot->right;     
+	    if(temp != NULL) temp->parent = Troot->parent;
             delete(Troot);
             Troot = NULL; 
-            if(temp != NULL) temp->parent = Troot->parent;
 	    return(temp);
         }
         //two child
