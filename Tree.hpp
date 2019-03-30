@@ -1,5 +1,4 @@
 namespace ariel {
-class Tree {
 	struct node{
 
 		int data;
@@ -8,7 +7,8 @@ class Tree {
 		struct node *parent;
 	};
 
-	
+	class Tree {
+
 
                 private:
 		int Tsize;
