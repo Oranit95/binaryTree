@@ -106,6 +106,7 @@ bool Tree::contains(int i){
 	//returns the number that's in the root of the tree
 int Tree::root()
 {
+	if(Troot==NULL)  throw std::invalid_argument( "NULL POINTER EXCEPTION" );
 	return Troot->data;
 }
 
